@@ -174,8 +174,28 @@ async function logoutUserController(req,res){
     })
 }
 
+/**
+ * @name getMeUserController
+ * @description get the details of the logged in user
+ * @access public
+ */
+
+async function getMeUserController(req,res){
+    const user = await userModel.findById(req.user.id)
+
+    res.status(200).json({
+        message: "User data fetched successfully",
+        user:{
+            id: user._id,
+            username: user.username,
+            email: user.email
+        }
+    })
+}
+
 module.exports = {
     registerUserController,
     loginuserController,
-    logoutUserController
+    logoutUserController,
+    getMeUserController
 }
