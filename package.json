@@ -1,33 +1,5 @@
 {
-  "name": "hiresense-ai",
-  "version": "1.0.0",
-  "description": "Many students:\r - Don't know whether their resume is good enough.\r - Apply to jobs without understanding skill requirements.\r - Struggle to prepare for interviews.\r - Lack personalized guidance.",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npx nodemon server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Krishna-Kr-Yadav/HireSense-AI.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/Krishna-Kr-Yadav/HireSense-AI/issues"
-  },
-  "homepage": "https://github.com/Krishna-Kr-Yadav/HireSense-AI#readme",
   "dependencies": {
-    "bcryptjs": "^3.0.3",
-    "cookie-parser": "^1.4.7",
-    "dotenv": "^17.4.2",
-    "express": "^5.2.1",
-    "jsonwebtoken": "^9.0.3",
-    "mongoose": "^9.7.1"
+    "axios": "^1.18.0"
   }
 }
