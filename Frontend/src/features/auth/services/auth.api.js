@@ -12,7 +12,8 @@ const api = axios.create({
         })
         return response.data
     }catch(err){
-        console.log(err)
+        console.error("Registration error:", err.response?.data || err.message)
+        throw err
     }
 
   }
@@ -37,9 +38,10 @@ const api = axios.create({
   export async function logout(){
     try{
         const response = await api.get("/api/auth/logout")
-        return response
+        return response.data
     }catch(err){
-        console.log(err)
+        console.error("Logout error:", err.response?.data || err.message)
+        throw err
     }
   }
 
@@ -48,6 +50,12 @@ const api = axios.create({
         const response = await api.get("/api/auth/get-me")
         return response.data
     }catch(err){
-        console.log(err)
+        // If not authenticated (401), return null instead of throwing
+        if(err.response?.status === 401){
+            console.log("User not authenticated")
+            return { user: null }
+        }
+        console.error("GetMe error:", err.response?.data || err.message)
+        throw err
     }
   }
