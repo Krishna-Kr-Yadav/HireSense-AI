@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin:"https://hiresense-ai-backend-33rz.onrender.com",
+    origin:"https://hiresense-ai-frontend.onrender.com",
     credentials: true
 }))
 
